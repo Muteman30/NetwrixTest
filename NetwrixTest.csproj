@@ -161,6 +161,14 @@
     <Compile Include="Migrations\202008200818278_SeedInvoicesTable.designer.cs">
       <DependentUpon>202008200818278_SeedInvoicesTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008201046547_ChangeToHomeModel.cs" />
+    <Compile Include="Migrations\202008201046547_ChangeToHomeModel.designer.cs">
+      <DependentUpon>202008201046547_ChangeToHomeModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008201050439_updateHomeModel.cs" />
+    <Compile Include="Migrations\202008201050439_updateHomeModel.designer.cs">
+      <DependentUpon>202008201050439_updateHomeModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -247,6 +255,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202008200818278_SeedInvoicesTable.resx">
       <DependentUpon>202008200818278_SeedInvoicesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008201046547_ChangeToHomeModel.resx">
+      <DependentUpon>202008201046547_ChangeToHomeModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008201050439_updateHomeModel.resx">
+      <DependentUpon>202008201050439_updateHomeModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

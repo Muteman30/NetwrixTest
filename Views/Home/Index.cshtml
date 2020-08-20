@@ -1,11 +1,12 @@
-﻿@{
+﻿@model NetwrixTest.ViewModels.HomeTestViewModel
+@{
     ViewBag.Title = "Home Page";
 }
 
 <div class="jumbotron">
     <h1>Netwrix Test</h1>
-    <p>Number of Paid Invoices: </p>
-    <p>Total of Paid Invoices: </p>
+    <p>Number of Paid Invoices: @Model.PaidInvoicesNumber</p>
+    <p>Total Value of Paid Invoices: @Model.PaidInvoicesValue</p>
 </div>
 
 <div class="row">
@@ -14,21 +15,25 @@
             <tr>
                 <td>Customer Name</td>
                 <td>Most Recent Invoice Ref</td>
-                <td>Most recent Invoice Amount</td>
-                <td>Number of outstanding Invoices</td>
-                <td>Total Of Outstanging Invoices</td>
+                <td>Most Recent Invoice Amount</td>
+                <td>Number of Outstanding Invoices</td>
+                <td>Total of Outstanding Invoices</td>
                 <td>Total of Paid Invoices</td>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Customer Name</td>
-                <td>Most Recent Invoice Ref</td>
-                <td>Most recent Invoice Amount</td>
-                <td>Number of outstanding Invoices</td>
-                <td>Total Of Outstanging Invoices</td>
-                <td>Total of Paid Invoices</td>
-            </tr>
+            @foreach(var c in Model.Customers)
+            {
+                <tr>
+                    <td>@c.Customer.Name</td>
+                    <td data-invoiceid="@c.MostRecentInvoice.Id">@c.MostRecentInvoice.Ref</td>
+                    <td data-invoiceid="@c.MostRecentInvoice.Id">@c.MostRecentInvoice.Value</td>
+                    <td>@c.OutstandingNum</td>
+                    <td>@c.OutstandingInvoices.Aggregate(0M, (acc, i) => acc+i.Value)</td>
+                    <td>@c.PaidInvoices.Aggregate(0M, (acc, i) => acc + i.Value)</td>
+                </tr>
+            }
+            
         </tbody>
     </table>
 </div>
