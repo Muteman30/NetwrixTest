@@ -25,7 +25,7 @@
             @foreach(var c in Model.Customers)
             {
                 <tr>
-                    <td>@c.Customer.Name</td>
+                    <td>@c.Name</td>
                     <td data-invoiceid="@c.MostRecentInvoice.Id">@c.MostRecentInvoice.Ref</td>
                     <td data-invoiceid="@c.MostRecentInvoice.Id">@c.MostRecentInvoice.Value.ToString("N")</td>
                     <td>@c.OutstandingInvoices.Count()</td>

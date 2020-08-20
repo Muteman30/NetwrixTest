@@ -24,5 +24,12 @@ namespace NetwrixTest.Controllers
             };
             return View(vm);
         }
+
+        public ActionResult Customer(int id)
+        {
+            var customerInDB = _context.Customers.Single(c => c.Id == id);
+
+            return View();
+        }
     }
 }
