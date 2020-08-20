@@ -14,5 +14,6 @@ namespace NetwrixTest.Models
 
         }
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<Invoice> Invoices { get; set; }
     }
 }
