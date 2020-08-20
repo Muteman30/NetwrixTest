@@ -10,6 +10,7 @@ namespace NetwrixTest.Controllers
     {
         public ActionResult Index()
         {
+
             return View();
         }
 

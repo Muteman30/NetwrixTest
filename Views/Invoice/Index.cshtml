@@ -1,0 +1,30 @@
+﻿@model NetwrixTest.ViewModels.AllInvoices
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>All Invoices</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>Reference</td>
+            <td>Customer Name</td>
+            <td>Date</td>
+            <td>Value</td>
+            <td>Has been paid?</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var i in Model.Invoices)
+         {
+            <tr>
+                <td>@i.Ref</td>
+                <td>@i.Customer.Name</td>
+                <td>@i.InvoiceDate</td>
+                <td>£@i.Value</td>
+                <td>@i.IsPaid</td>
+            </tr>
+        }
+    </tbody>
+</table>
