@@ -5,8 +5,8 @@
 
 <div class="jumbotron">
     <h1>Netwrix Test</h1>
-    <p>Number of Paid Invoices: @Model.PaidInvoicesNumber</p>
-    <p>Total Value of Paid Invoices: @Model.PaidInvoicesValue</p>
+    <p>Number of Paid Invoices: @Model.PaidInvoicesNumber.ToString("N")</p>
+    <p>Total Value of Paid Invoices: £@Model.PaidInvoicesValue.ToString("N")</p>
 </div>
 
 <div class="row">
@@ -17,8 +17,8 @@
                 <td>Most Recent Invoice Ref</td>
                 <td>Most Recent Invoice Amount</td>
                 <td>Number of Outstanding Invoices</td>
-                <td>Total of Outstanding Invoices</td>
-                <td>Total of Paid Invoices</td>
+                <td>Total of Outstanding Invoices (£)</td>
+                <td>Total of Paid Invoices (£)</td>
             </tr>
         </thead>
         <tbody>
@@ -27,13 +27,12 @@
                 <tr>
                     <td>@c.Customer.Name</td>
                     <td data-invoiceid="@c.MostRecentInvoice.Id">@c.MostRecentInvoice.Ref</td>
-                    <td data-invoiceid="@c.MostRecentInvoice.Id">@c.MostRecentInvoice.Value</td>
-                    <td>@c.OutstandingNum</td>
-                    <td>@c.OutstandingInvoices.Aggregate(0M, (acc, i) => acc+i.Value)</td>
-                    <td>@c.PaidInvoices.Aggregate(0M, (acc, i) => acc + i.Value)</td>
+                    <td data-invoiceid="@c.MostRecentInvoice.Id">@c.MostRecentInvoice.Value.ToString("N")</td>
+                    <td>@c.OutstandingInvoices.Count()</td>
+                    <td>@c.OutstandingInvoices.Aggregate(0M, (acc, i) => acc+i.Value).ToString("N")</td>
+                    <td>@c.PaidInvoices.Aggregate(0M, (acc, i) => acc + i.Value).ToString("N")</td>
                 </tr>
             }
-            
         </tbody>
     </table>
 </div>
