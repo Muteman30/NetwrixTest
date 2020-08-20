@@ -13,6 +13,6 @@ namespace NetwrixTest.Models
         {
 
         }
-
+        public DbSet<Customer> Customers { get; set; }
     }
 }

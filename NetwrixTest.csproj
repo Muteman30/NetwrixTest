@@ -131,6 +131,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008200702457_AddTheCustomerTable.cs" />
+    <Compile Include="Migrations\202008200702457_AddTheCustomerTable.designer.cs">
+      <DependentUpon>202008200702457_AddTheCustomerTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008200710391_SeedCustomerTable.cs" />
+    <Compile Include="Migrations\202008200710391_SeedCustomerTable.designer.cs">
+      <DependentUpon>202008200710391_SeedCustomerTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -188,6 +196,14 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202008200702457_AddTheCustomerTable.resx">
+      <DependentUpon>202008200702457_AddTheCustomerTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008200710391_SeedCustomerTable.resx">
+      <DependentUpon>202008200710391_SeedCustomerTable.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
