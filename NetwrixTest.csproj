@@ -139,6 +139,10 @@
     <Compile Include="Migrations\202008200710391_SeedCustomerTable.designer.cs">
       <DependentUpon>202008200710391_SeedCustomerTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008200746166_UpdateCustomersTableAdditionalFields-Address1-Address2-PostCode-Telephone.cs" />
+    <Compile Include="Migrations\202008200746166_UpdateCustomersTableAdditionalFields-Address1-Address2-PostCode-Telephone.designer.cs">
+      <DependentUpon>202008200746166_UpdateCustomersTableAdditionalFields-Address1-Address2-PostCode-Telephone.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -203,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202008200710391_SeedCustomerTable.resx">
       <DependentUpon>202008200710391_SeedCustomerTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008200746166_UpdateCustomersTableAdditionalFields-Address1-Address2-PostCode-Telephone.resx">
+      <DependentUpon>202008200746166_UpdateCustomersTableAdditionalFields-Address1-Address2-PostCode-Telephone.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
