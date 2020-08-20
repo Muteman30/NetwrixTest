@@ -1,0 +1,12 @@
+﻿@model NetwrixTest.ViewModels.AllCustomers
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>All Customers</h2>
+
+<ul>
+    @foreach(var c in Model.Customers){
+        <li>@c.Name</li>
+    }
+</ul>
