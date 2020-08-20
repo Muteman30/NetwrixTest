@@ -156,6 +156,10 @@
     <Compile Include="Migrations\202008200815198_MissedId100.designer.cs">
       <DependentUpon>202008200815198_MissedId100.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008200818278_SeedInvoicesTable.cs" />
+    <Compile Include="Migrations\202008200818278_SeedInvoicesTable.designer.cs">
+      <DependentUpon>202008200818278_SeedInvoicesTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -234,6 +238,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202008200815198_MissedId100.resx">
       <DependentUpon>202008200815198_MissedId100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008200818278_SeedInvoicesTable.resx">
+      <DependentUpon>202008200818278_SeedInvoicesTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
