@@ -27,9 +27,22 @@ namespace NetwrixTest.Controllers
 
         public ActionResult Customer(int id)
         {
-            var customerInDB = _context.Customers.Single(c => c.Id == id);
-
-            return View();
+            Customer custinDB = _context.Customers.SingleOrDefault(c => c.Id == id);
+           
+            if (custinDB == null)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                CustomerViewModel vm = new CustomerViewModel
+                {
+                    Customer = custinDB,
+                    Invoices = _context.Invoices.Where(i => i.CustomerId == id).ToList()
+                };
+                return View(vm);
+            }
+            
         }
     }
 }

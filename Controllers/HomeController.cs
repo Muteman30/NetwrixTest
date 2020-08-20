@@ -21,12 +21,7 @@ namespace NetwrixTest.Controllers
                 PaidInvoicesNumber = _context.Invoices.Where(i => i.IsPaid).Count(),
                 PaidInvoicesValue = _context.Invoices.Where(i => i.IsPaid).AsEnumerable().Aggregate(0M, (acc, inv) =>acc+inv.Value),
                 Customers = _context.Customers.Select(c => new HomeCustomer{
-                    Id = c.Id,
-                    Name = c.Name,
-                    Address1 = c.Address1,
-                    Address2 = c.Address2,
-                    Postcode = c.Postcode,
-                    Telephone = c.Telephone,
+                    Customer = c,
                     PaidInvoices = _context.Invoices.OrderBy(i => i.InvoiceDate).Where(i => i.CustomerId == c.Id && c.Id == i.CustomerId).ToList(),
                     OutstandingInvoices = _context.Invoices.Where(i => !i.IsPaid && c.Id == i.CustomerId).ToList(),
                     MostRecentInvoice = _context.Invoices.OrderBy(i => i.InvoiceDate).FirstOrDefault(i => i.CustomerId == c.Id),

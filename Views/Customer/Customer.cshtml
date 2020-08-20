@@ -1,0 +1,53 @@
+﻿@model NetwrixTest.ViewModels.CustomerViewModel
+@{
+    ViewBag.Title = "Customer";
+}
+
+<h2>@Model.Customer.Name</h2>
+
+<h3>Details</h3>
+<table class="table table-bordered">
+    <tr>
+        <td>Name:</td>
+        <td>@Model.Customer.Name</td>
+    </tr>
+    <tr>
+        <td>Address 1:</td>
+        <td>@Model.Customer.Address1</td>
+    </tr>
+    <tr>
+        <td>Address 2:</td>
+        <td>@Model.Customer.Address2</td>
+    </tr>
+    <tr>
+        <td>Postcode</td>
+        <td>@Model.Customer.Postcode</td>
+    </tr>
+    <tr>
+        <td>Telephone</td>
+        <td>@Model.Customer.Telephone</td>
+    </tr>
+</table>
+
+<h3>Invoices</h3>
+<table class="table-bordered table">
+    <thead>
+        <tr>
+            <td>Reference</td>
+            <td>Date</td>
+            <td>Value</td>
+            <td>Outstanding</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var i in Model.Invoices)
+        {
+            <tr>
+                <td>@i.Ref</td>
+                <td>@i.InvoiceDate</td>
+                <td>@i.Value</td>
+                <td>@i.IsPaid</td>
+            </tr>
+        }
+    </tbody>
+</table>

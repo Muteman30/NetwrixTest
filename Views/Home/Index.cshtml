@@ -25,7 +25,7 @@
             @foreach(var c in Model.Customers)
             {
                 <tr>
-                    <td>@c.Name</td>
+                    <td>@Html.ActionLink(c.Customer.Name, "Customer", "Customer", new { id=c.Customer.Id })</td>
                     <td data-invoiceid="@c.MostRecentInvoice.Id">@c.MostRecentInvoice.Ref</td>
                     <td data-invoiceid="@c.MostRecentInvoice.Id">@c.MostRecentInvoice.Value.ToString("N")</td>
                     <td>@c.OutstandingInvoices.Count()</td>
