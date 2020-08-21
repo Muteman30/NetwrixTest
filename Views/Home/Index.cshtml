@@ -10,7 +10,7 @@
 </div>
 
 <div class="row">
-    <table class="table table-bordered">
+    <table class="table table-bordered" id="home-table">
         <thead>
             <tr>
                 <td>Customer Name</td>
@@ -25,7 +25,7 @@
             @foreach(var c in Model.Customers)
             {
                 <tr>
-                    <td>@Html.ActionLink(c.Customer.Name, "Customer", "Customer", new { id=c.Customer.Id })</td>
+                    <td>@Html.ActionLink(c.Customer.Name, "Customer", "Customer", new { id=c.Customer.Id }, null)</td>
                     <td data-invoiceid="@c.MostRecentInvoice.Id">@c.MostRecentInvoice.Ref</td>
                     <td data-invoiceid="@c.MostRecentInvoice.Id">@c.MostRecentInvoice.Value.ToString("N")</td>
                     <td>@c.OutstandingInvoices.Count()</td>
@@ -36,3 +36,10 @@
         </tbody>
     </table>
 </div>
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $('#home-table').DataTable()
+        })
+    </script>    
+}

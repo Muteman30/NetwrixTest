@@ -6,7 +6,7 @@
 <h2>@Model.Customer.Name</h2>
 
 <h3>Details</h3>
-<table class="table table-bordered">
+<table class="table table-bordered" id="customer-table">
     <tr>
         <td>Name:</td>
         <td>@Model.Customer.Name</td>
@@ -30,7 +30,7 @@
 </table>
 
 <h3>Invoices</h3>
-<table class="table-bordered table">
+<table class="table-bordered table" id="invoice-table">
     <thead>
         <tr>
             <td>Reference</td>
@@ -44,10 +44,15 @@
         {
             <tr>
                 <td>@i.Ref</td>
-                <td>@i.InvoiceDate</td>
-                <td>@i.Value</td>
+                <td>@i.InvoiceDate.ToShortDateString()</td>
+                <td>@i.Value.ToString("N")</td>
                 <td>@i.IsPaid</td>
             </tr>
         }
     </tbody>
 </table>
+@section scripts{
+    <script>
+        $('#invoice-table').DataTable();
+    </script>
+    }

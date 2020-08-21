@@ -9,10 +9,12 @@ namespace NetwrixTest.Models
 {
     public class ApplicationDbContext : DbContext
     {
+        //the connection string is noted in the web.config file
         public ApplicationDbContext() : base ("myConnection")
         {
 
         }
+        //DB Sets of related data.
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Invoice> Invoices { get; set; }
     }

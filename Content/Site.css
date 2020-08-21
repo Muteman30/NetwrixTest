@@ -22,3 +22,7 @@ select,
 textarea {
     max-width: 280px;
 }
+
+#customer-table tr:nth-child(2n+1){
+    background:#ececec
+}
